@@ -1,0 +1,730 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+
+  <head>
+    <title>Healthcare - Budget Plan 2019-2020</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+    <style>
+        /* body {
+                color: #fff;
+                background: #676d79;
+                line-height: 25px;
+                font-family: Chalkduster, fantasy;
+            } */
+
+        .news_page {
+            width: 80vw;
+            /* height: 100vh; */
+            /* background: #e3e9ee; */
+        }
+
+        .data_page {
+            width: 80vw;
+            /* height: 100vh; */
+            /* background: #e3e9ee; */
+        }
+
+        .news_content {
+            height: 280px;
+            display: flex;
+            align-items: center;
+            vertical-align: center;
+        }
+
+        .news_content p+p {
+            display: none;
+            transition: all 2s;
+        }
+
+        .button_img img:hover {
+            cursor: pointer
+        }
+
+        .news_button {
+            display: flex;
+            align-items: flex-end;
+            vertical-align: center;
+            justify-content: space-around
+        }
+
+        .onShow {
+            /* animation: show_animation 1s; */
+            display: block !important;
+            /* transition: all 1s; */
+        }
+
+        .onhide {
+            display: none !important;
+            /* animation: hide_animation 1s; */
+            /* transition: all 1s; */
+        }
+
+        .button_img {
+            opacity: 0.4;
+            transition: all 0.3s
+        }
+
+        .button_img:hover {
+            opacity: 1;
+            transition: all 0.3s
+        }
+
+        .img_opacity {
+            opacity: 1 !important;
+        }
+
+        hr {
+            margin-top: 0px;
+            *margin: 0;
+            border: 0;
+            color: white;
+            background-color: white;
+            height: 2px
+        }
+        .map{
+          width: 100%;
+          height: auto;
+          position: relative;
+          margin-bottom: 2em;
+        }
+        .map img{
+          width: 100%;
+          height: auto;
+        }
+        .map .orange1{
+          position: absolute;
+          width: 36%;
+          height: auto;
+          top: 1.45%;
+          left: 4.5%;
+          z-index: 7;
+          display: none;
+        }
+        .map .grey1{
+          position: absolute;
+          width: 36%;
+          height: auto;
+          top: 1.45%;
+          left: 4.5%;
+          z-index: 7;
+        }
+        /* 框框大小 下面的pink_box blue_box都是 */
+        .map .orange_box{
+          position: absolute;
+          width: 40%;
+          height: auto;
+          right: 15%;
+          top: 10%;
+          background: #fbdbb1;
+          padding: 1em;
+          z-index: 9;
+          display: none;
+        }
+        .map .orange_box img{
+          width: 100%;
+          height: auto;
+        }
+        /* 字号 */
+        .map .orange_box h4, .map .pink_box h4, .map .blue_box h4{
+          text-align: center;
+          border-bottom: 2px solid #000;
+          margin-bottom: 0.5em;
+          font-size: 1.1em;
+        }
+        .map .orange_box p, .map .pink_box p, .map .blue_box p{
+          text-align: left;
+          font-size: 13px;
+          margin-bottom: 0;
+        }
+        .map .pink2{
+          position: absolute;
+          width: 27%;
+          height: auto;
+          top: 30%;
+          left: 34.5%;
+          z-index: 8;
+          display: none;
+        }
+        .map .grey2{
+          position: absolute;
+          width: 27%;
+          height: auto;
+          top: 30%;
+          left: 34.5%;
+          z-index: 8;
+        }
+        .map .pink_box{
+          position: absolute;
+          width: 40%;
+          height: auto;
+          right: 0;
+          top: 0;
+          background: #f7b7d6;
+          padding: 1em;
+          z-index: 9;
+          display: none;
+        }
+        .map .pink_box img{
+          width: 100%;
+          height: auto;
+        }
+        .map .blue3{
+          position: absolute;
+          width: 41%;
+          height: auto;
+          top: 19.5%;
+          right: 4.3%;
+          z-index: 7;
+          display: none;
+        }
+        .map .grey3{
+          position: absolute;
+          width: 41%;
+          height: auto;
+          top: 19.5%;
+          right: 4.3%;
+          z-index: 7;
+        }
+        
+        .map .blue_box{
+          position: absolute;
+          width: 40%;
+          height: auto;
+          left: 6%;
+          top: 12%;
+          background: #87d1f2;
+          padding: 1em;
+          z-index: 9;
+          display: none;
+        }
+        .map .blue_box img{
+          width: 100%;
+          height: auto;
+        }
+        /* 自适应 */
+        @media only screen and (min-width:0px) {
+            body {
+                font-size: 12px;
+            }
+
+            .button_img img {
+                width: 40px;
+            }
+        }
+        @media screen and (min-width:375px) {
+          .map .orange_box h4, .map .pink_box h4, .map .blue_box h4{
+            font-size: 6px;
+          }
+          .map .orange_box p, .map .pink_box p, .map .blue_box p{
+            font-size: 6px;
+          }
+        }
+        @media screen and (min-width:414px) {
+          .map .orange_box h4, .map .pink_box h4, .map .blue_box h4{
+            font-size: 6px;
+          }
+          .map .orange_box p, .map .pink_box p, .map .blue_box p{
+            font-size: 6px;
+          }
+        }
+        @media screen and (min-width:480px) {
+            body {
+                font-size: 14px;
+            }
+
+            .button_img img {
+                width: 60px;
+            }
+          .map .orange_box h4, .map .pink_box h4, .map .blue_box h4{
+            font-size: 6px;
+          }
+          .map .orange_box p, .map .pink_box p, .map .blue_box p{
+            font-size: 6px;
+          }
+        }
+
+        @media screen and (min-width:768px) {
+            body {
+                font-size: 14px;
+            }
+
+            .button_img img {
+                width: 80px;
+            }
+          .map .orange_box h4, .map .pink_box h4, .map .blue_box h4{
+            font-size: 10px;
+          }
+          .map .orange_box p, .map .pink_box p, .map .blue_box p{
+            font-size: 6px;
+          }
+        }
+
+        @media only screen and (min-width:992px) {
+            body {
+                font-size: 14px;
+            }
+
+            .button_img img {
+                width: 100px;
+            }
+
+            /* .news_button{
+                    height: 291.28px;
+                    
+                } */
+        }
+
+        @media only screen and (min-width:1200px) {
+            body {
+                font-size: 18px;
+            }
+
+            .button_img img {
+                width: 120px;
+            }
+
+            /* .news_button{
+                    height: 291.28px;
+                    
+                } */
+        }
+        @media only screen and (min-width:1440px) {
+          .map .orange_box h4, .map .pink_box h4, .map .blue_box h4{
+            font-size: 1.1em;
+          }
+          .map .orange_box p, .map .pink_box p, .map .blue_box p{
+            font-size: 13px;
+          }
+        }
+    </style>
+</head>
+
+<body class="is-preload">
+  <!-- HighChart Javascript -->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <!-- HighChart Javascript -->
+  <!-- Wrapper -->
+  <div id="wrapper">
+
+    <!-- Header -->
+    <!-- Note: The "styleN" class below should match that of the banner element. -->
+    <header id="header" class="alt style2">
+      <a href="index.html" class="logo"><strong>TYR x DMC</strong> <span style="color:beige">2022</span></a>
+
+    </header>
+
+
+    <!-- Banner -->
+    <!-- Note: The "styleN" class below should match that of the header element. -->
+
+
+    <section id="banner" class="style2">
+
+      <div class="inner">
+
+        <span class="image">
+          <img src="picture/branchImage/healthCare.jpg" alt="" />
+        </span>
+        <header class="major">
+          <br><br>
+          <h2 align="center" style="color:rgb(255, 255, 255)">Hong Kong budget aims to tighten financial and economic
+            ties with mainland China
+
+          </h2>
+          <br>
+          <hr style="border: solid 1px rgb(255, 255, 255)">
+          <h5 align="center" style="color:rgb(255, 255, 255)"><i>Reported by Ziyu Zhao, Yimeng Zhang
+              <br>Edited by Summer Li
+              <br>Graphics by Siqi Li
+            </i></h5>
+
+
+        </header>
+
+        <!-- Main---- <div class="content">
+                    <p>The intro of healthcare topic goes here</p>
+                </div>      -->
+      </div>
+    </section>
+
+    <!-- Main -->
+    <div id="main">
+
+      <!-- One -->
+      <section id="one">
+        <div class="inner">
+          <!-- <header class="major"> -->
+          <!-- <h1>Budget 2022/23: Northern-Metropolis-Development-Strategy-Report
+                    </h1>
+                    <br>
+                    <hr style="border: solid 1px rgb(0, 0, 0)">
+                    <h4><i>Reported by Stephanie Ma,William Tsui and Tomiris Urstembayeva
+                            <br>Edited by Phoebe Lai
+                            <br>Graphics by Kelly Zhao
+                        </i></h4>
+
+                    <br><br> -->
+          <!-- </header> -->
+
+
+
+
+
+
+
+          <p style="font-size:17px;">
+            <br>
+            Hong Kong’s Financial Secretary Paul Chan Mo-po addressed the HK$170 billion budget for the city in today's
+            speech, with considerable mentions on integrating Hong Kong’s economy into the mainland China market and
+            national-level development.
+            <br>
+          <h4>
+
+            Strengthening Hong Kong as a financial centre to integrate with mainland development
+
+          </h4>
+
+          Hong Kong will enhance its status as an international financial centre in line with the 14th Five‑Year Plan by
+          strengthening its status as an offshore renminbi hub and asset management centre, the Financial Secretary said
+          in his budget speech today.
+          <br>
+          <br>“In the future, we will explore ways to further expand the channels for the two-way flow of cross-
+          boundary RMB funds, as well as continue to promote the development of offshore RMB products, including
+          introducing more diversified RMB wealth management products and bonds,” Financial Secretary, Paul Chan said .
+          <br>
+          <br>The city launched the Southbound Trading of Bond Connect and the Cross‑boundary Wealth Management Connect
+          Scheme in the Greater Bay Area (GBA) in September last year, which allows individual investors in the mainland
+          to invest in offshore bonds through the Hong Kong bond market according to the Hong Kong Monetary Authority.
+          <br><br> Chan said the government is exploring more enhancement measures for these investment initiatives,
+          including expanding quotas and scope of eligible investment products, inviting more companies to participate,
+          and improving distribution.
+          <br><br>The Hong Kong Mortgage Corporation Limited will study and implement a pilot plan for infrastructure
+          financing securitization within the year. According to the plan, the corporation is expected to issue
+          infrastructure financing securitization products worth about HK$ 35.1 trillion (US$450 million) in the
+          institutional market next year.
+          <br><br>“On the one hand, the local infrastructure financing market will be more vigorous and diversified, and
+          at the same time, market capital will be introduced into high-quality infrastructure projects,” Chan said.
+
+          <br><br>Chan also proposed to set up a Greater Bay Area Investment Fund with half of the Future Fund’s
+          allocation to the Hong Kong Growth Portfolio which is HK$5 billion, focusing on investment opportunities in
+          the Greater Bay Area.
+          <br><br>“As the relationship between Hong Kong and other cities in the GBA becomes closer, investing in the
+          development of various priority industries in the region will not only inject more dynamism to the development
+          of the region, but also bring economic and social benefits to Hong Kong,” he said.
+          <br><br>
+
+
+
+          
+
+
+
+
+          <img style="width: 700px;height: 420px;max-width:100%;overflow:hidden;" src="./picture/branchImage/bg1.jpg"
+            alt="">
+            <p style="text-align:center;font-size:13px;">
+
+              Hong Kong eyes on stronger connections with the mainland market, budget briefs
+  
+            </p>
+          <br>
+          <h4>Hong Kong's further enhanced accession to the mainland trade and business
+
+          </h4>
+
+          “Integrating into the national development is an inevitable path for the Hong Kong economy.” the Financial
+          Secretary said. The strategy of domestic and international dual circulation is a clear goal mentioned in the
+          14th five year development plan announced by Beijing. “The government will make good use of national policies
+          and our own advantages and take the GBA as an entry point, proactively exploring the vast Mainland market and
+          participating in the domestic circulation of the national economy,“ he said.
+          <br> <br>“We will continue to strive to introduce more liberalization measures under the framework of the
+          Mainland and Hong Kong Closer Economic Partnership Arrangement (CEPA), thereby creating more favorable
+          conditions for Hong Kong enterprises to enter the mainland market.” he also mentioned the determination to
+          become more open and more willing to integrate into the mainland.
+          <br> <br>CEPA is the special policy signed by the mainland government and the Hong Kong and Macao special
+          administrative region governments, originally in response to the SARS virus and the Asian financial turmoil,
+          intending to gradually reduce or eliminate tariff and non-tariff barriers to substantially all goods trade
+          between the three parties.
+          <br><br>To help freight traffic between Hong Kong and the mainland, the budget set out a plan for
+          establishment and development of a logistics hub.
+          <br><br>“The 14th Five-Year Plan expressly supports Hong Kong in developing high value-added maritime
+          services, and states for the first time the support for enhancing Hong Kong’s status as an international
+          aviation hub.” The secretary said.
+          <br> <br>In order to further strengthen trade exchanges between the mainland and Hong Kong， the Hong Kong
+          Airport Authority plans to develop sea-air cargo transshipment between Hong Kong and the Great Bay Area. An
+          upstream HKIA Logistics Park in Dongguan and an airside intermod
+          a cargo handling facility at the HKIA will be set up. According to the Financial Secretary, this series of
+          measures will eliminate repeated security procedures “This will allow export cargo from the mainland to
+          complete security screening in advance and then be transported seamlessly to Hong Kong,” he said.
+
+          <br> <br>All goods entering Hong Kong from the mainland and to be sold overseas will be packaged and security
+          checked at Hong Kong International Airport (HKIA) logistics park in Dongguan. After seamless delivery to the
+          airside intermodal cargo handling facility at the HKIA, there is no need to repeat unpacking inspection.
+          Instead, they can be directly transported overseas by air. And for goods transported from abroad to the
+          mainland through Hong Kong, the security inspection procedures will also be reduced
+
+          <br> <br>Apart from that, the government plans to directly fund Hong Kong businessmen in the mainland. A total
+          funding of HK$135 million to the TDC (Trade Development Council) will be allocated over the next three years
+          for the introduction of the Support Scheme for Pursuing Development in the Mainland.
+
+          <br> <br>According to the Hong Kong and Macao affairs office of the Guangdong Province government, as of
+          August 21, 2021, Shenzhen Qianhai cooperation zone has registered 11500 Hong Kong funded enterprises with a
+          registered capital of 1.28 trillion yuan.
+          <br><br>“The scheme will focus on those Mainland cities with larger numbers of Hong Kong business people and
+          workers, with priority accorded to the GBA.” This initiative aims to support Hong Kong businessmen,
+          professional service sectors and entrepreneurs in the mainland to better integrate into the overall situation
+          of national development and seize opportunities.
+          <br> <br>LIM Yu Hong, a BBA graduate living in Tai Po, thinks that these policies will also attract young
+          adults like him to start businesses in the mainland. "As long as these plans are implemented, I am certainly
+          willing to start a business there,” he said. “But the mainland should also have more supporting measures, such
+          as subsidized housing and social security because when Hong Kong people go back to the mainland to start a
+          business, they will not only face capital problems, but also face some life and social problems,” he added
+          <br><br>
+          <h4>Land building for future integration: Making of the Northern Metropolis
+          </h4>
+          <br>The Northern Metropolis bordering the mainland is set to become an innovation and technology hub. In his
+          budget speech, Financial Secretary, Paul Chan said HK$100 billion will be spent on speeding up construction of
+          the new zone.
+          <br><br>The strategy, firstly mentioned in the Policy Address 2021 last November, aims to transform remote
+          districts boarding mainland city Shenzhen in the Northern New Territories into a new CBD and high-tech hub for
+          Hong Kong.
+
+          <br> <br>“Both the Northern Metropolis Development Strategy (the Development Strategy) and Lantau Tomorrow
+          plan are important initiatives for increasing land supply, through which housing supply can be substantially
+          increased. The Northern Metropolis will provide ample land for I&T uses, which will foster I&T development in
+          Hong Kong,” Paul Chan said today,
+          <br> <br>With an “Infrastructure-led” approach set for the area, the fund will be primarily used to support
+          construction works relating to land, housing and transport development. The government has already kicked
+          start the railway network development projects, which include the expansion of the current Northern Link and
+          the building of Hong Kong-Shenzhen West Rail link connecting New Territories North CBD with Qianhai district
+          in Shenzhen.
+          <br> <br><br>
+         
+
+          <img style="max-width:100%;overflow:hidden;" src="./picture/branchImage/123123.jpg" alt="">
+          <p style="text-align:center;font-size:13px;">
+
+            Transportation projects including the extension of the current Northern Link and Western Rail Link are under
+            construction.
+
+          </p>
+          
+
+
+          </p>
+
+
+
+
+
+          <p style="font-size:17px;">
+            “The Northern Metropolis will provide synergy to speed up Hong Kong’s commercial cooperation with Shenzhen
+            and the Greater Bay Area as a whole,” said Billy Mak Sui-choi, a member of the Process Review Panel and the
+            Products Advisory Committee for the Securities and Futures Commission.
+
+
+            <br><br>
+            He said currently Hong Kong’s most developed districts, Central and Kowloon, are very far away from
+            Shenzhen, which is “problematic and time-consuming” for businesses between the two cities to interact and
+            integrate.
+
+            
+
+            
+
+          </p>
+          <br>
+
+          <!-- 页面内容 -->
+          <div class="map">
+            <img src="./picture/branchImage/bg.png" alt="">
+            <img class="orange1" src="./picture/branchImage/orange1.png" alt="">
+            <div class="orange_box">
+              <h4>Shenzhen Bay Quality Development Circle</h4>
+              <p>Comprising Nanshan and Qianhai district, two of the nation's richest districts. Home to tech giants
+                Tencent, Huawei and conglomerates like Ping’an.<br>Interfacing with the Yuen Long New Town, the Tin Shui
+                Wai New Town, in which the New Territories North Central Business District is set to share opportunities
+                with Shenzhen.
+              </p>
+              <img src="./picture/branchImage/orange_img1.jpg" alt="">
+            </div>
+            <img class="grey1" src="./picture/branchImage/grey1.png" alt="">
+            <img class="pink2" src="./picture/branchImage/pink2.png" alt="">
+            <img class="grey2" src="./picture/branchImage/grey2.png" alt="">
+            <div class="pink_box">
+              <h4>Hong Kong-Shenzhen Close Interaction Circle</h4>
+              <p>The core region for future joint I&T industry development between Hong Kong and Shenzhen,
+                with San Tin Technopole as major construction.
+                <br>
+                Here, San Tin/ Lok Ma Chau and Fanling/Sheung Shui New Town directly connect with Futian and Luohu
+                district of Shenzhen through cross-boundary railway lines, an extension of the current MTR Northern
+                Link.
+              </p>
+              <img src="./picture/branchImage/orange_img2.jpg" alt="">
+            </div>
+            <img class="blue3" src="./picture/branchImage/blue3.png" alt="">
+            <img class="grey3" src="./picture/branchImage/grey3.png" alt="">
+
+            <div class="blue_box">
+              <h4>Mirs Bay/Yan Chau Tong Eco-recreation/tourism Circle</h4>
+              <p>A region abundant with nature reserves, marine parks and geoparks, aiming to provide leisure and green
+                tourism for residents of the two cities.</p>
+              <img src="./picture/branchImage/orange_img3.jpg" alt="">
+            </div>
+            <p style="text-align:center;font-size:13px;float:left;">
+
+              The overall planning of the Northern Metropolis. 
+              <img style="max-width:3%;overflow:hidden;" src="./picture/branchImage/hhh.jpg" alt="">
+  
+            </p>
+          </div>
+          
+
+          <!-- end -->
+
+
+          <p style="font-size:17px;">
+            
+            <br>
+
+            “The construction of the Northern Metropolis will geographically link Hong Kong to Qianhai, Luo Hu and
+            Futian”, Dr. Choi said, “ those are some of the richest districts in the country and home for a great many
+            high-tech giants, financial and modern logistics service providers, “making integration with the mainland
+            market much easier.”
+          </p>
+
+          <br>
+          <hr style="border: solid 1px rgb(0, 0, 0)">
+
+      </section>
+
+    </div>
+
+
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    $(function () {
+      if ($(window).width() > 750) {
+        $('.grey1').mouseover(function () {
+          $('.orange1').show()
+          $('.orange_box').show()
+          $('.grey1').hide()
+          $('.pink2').hide()
+          $('.pink_box').hide()
+          $('.blue3').hide()
+          $('.blue_box').hide()
+        });
+        $('.orange1, .pink2, .blue3').mouseleave(function () {
+          $('.orange1').hide()
+          $('.pink2').hide()
+          $('.blue3').hide()
+          $('.orange_box').hide()
+          $('.pink_box').hide()
+          $('.blue_box').hide()
+          $('.grey1').show()
+          $('.grey2').show()
+          $('.grey3').show()
+        });
+        $('.grey2').mouseover(function () {
+          $('.pink2').show()
+          $('.pink_box').show()
+          $('.grey2').hide()
+          $('.orange1').hide()
+          $('.orange_box').hide()
+          $('.blue3').hide()
+          $('.blue_box').hide()
+        });
+        $('.grey3').mouseover(function () {
+          $('.blue3').show()
+          $('.blue_box').show()
+          $('.grey3').hide()
+          $('.orange1').hide()
+          $('.orange_box').hide()
+          $('.pink2').hide()
+          $('.pink_box').hide()
+        });
+      } else {
+        $('.grey1').bind('click', function (e) {
+          $('.orange1').show()
+          $('.orange_box').show()
+          $('.grey1').hide()
+          $('.grey2').show()
+          $('.grey3').show()
+          $('.pink2').hide()
+          $('.pink_box').hide()
+          $('.blue3').hide()
+          $('.blue_box').hide()
+          e.stopPropagation()
+        });
+        $('.grey2').bind('click', function (e) {
+          $('.pink2').show()
+          $('.pink_box').show()
+          $('.grey2').hide()
+          $('.grey1').show()
+          $('.grey3').show()
+          $('.orange1').hide()
+          $('.orange_box').hide()
+          $('.blue3').hide()
+          $('.blue_box').hide()
+          e.stopPropagation()
+        });
+        $('.grey3').bind('click', function (e) {
+          $('.blue3').show()
+          $('.blue_box').show()
+          $('.grey3').hide()
+          $('.grey1').show()
+          $('.grey2').show()
+          $('.orange1').hide()
+          $('.orange_box').hide()
+          $('.pink2').hide()
+          $('.pink_box').hide()
+          e.stopPropagation()
+        });
+        $('.map').bind('click', function (e) {
+          $('.grey1').show()
+          $('.grey2').show()
+          $('.grey3').show()
+          $('.orange1').hide()
+          $('.orange_box').hide()
+          $('.pink2').hide()
+          $('.pink_box').hide()
+          $('.blue3').hide()
+          $('.blue_box').hide()
+          e.stopPropagation()
+        })
+      }
+    });
+  </script>
+</body>
+
+</html>
